@@ -11,8 +11,10 @@ jQuery(document).ready(function() {
 		jQuery(".wrapper-search-top-bar .txt-search").focus();
 	});
 	
-	jQuery(".boton-menu-movil").click(function() {
-		jQuery("#menu-movil").toggle();
+	jQuery(".cmn-toggle-switch").click(function() {
+		if (jQuery(this).hasClass("active")) {jQuery(this).removeClass('active');} 
+			else {jQuery(this).addClass('active');}
+		jQuery("#menu-movil").slideToggle('fast');
 	});
 	
 	if (jQuery(".credits-right").text().indexOf('ZeroGravity') == -1) {
@@ -40,4 +42,5 @@ jQuery(document).ready(function() {
 	jQuery(".close_children").click(function(event) {
 		jQuery(this).parent().removeClass('children_visible');
 	});
+	jQuery(".page-item-12>a").click(function(event) { return false; });
 });

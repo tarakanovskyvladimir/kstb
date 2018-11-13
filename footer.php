@@ -8,15 +8,25 @@
  */
 ?>
 	</div><!-- #main .wrapper -->
-	<footer id="colophon" role="contentinfo">
-		<div class="site-info">
-			<div class="credits credits-left"><?php echo wp_kses_post(get_theme_mod('zerogravity_footer_text_left', __('Copyright 2016', 'zerogravity'))); ?></div>
-			<div class="credits credits-center"><p>База СТБ<br>г. Ставрополь, ул. Доваторцев 183в<br>т.:8 (9624) 410-220</p></div>
-			<div class="credits credits-right">
-			<a href="<?php echo ZEROGRAVITY_AUTHOR_URI; ?>/wordpress-themes/zerogravity">ZeroGravity</a> <?php _e('by', 'zerogravity'); ?> GalussoThemes.com<br />
-			<?php _e('Powered by', 'zerogravity'); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'zerogravity' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'zerogravity' ); ?>"> WordPress</a>
-			</div>
-		</div><!-- .site-info -->
+</div><!-- #page -->
+<a class="popmake-4393 new-rukovod-text">Написать, позвонить руководителю</a>
+<footer id="colophon" role="contentinfo">
+  <div class="site-info flex-container">
+    <div class="logo-footer"><img src="/wp-content/themes/zerogravity/img/logo-bottom.png" alt=""></div>
+    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+    <address></address>
+    <address>г. Ставрополь, ул Доваторцев, 183В</address>
+    <div class="head-tel"><a href="tel:+79624410220">8 962 441 02 20</a>
+    <a href="tel:+78652467878">8 (8652) 46 78 78</a>
+    <span>8 962 441 02 20<br>8 (8652) 46 78 78</span></div>
+    <!-- <div class="credits credits-left"><?php /*echo wp_kses_post(get_theme_mod('zerogravity_footer_text_left', __('Copyright 2016', 'zerogravity')));*/ ?></div>
+    <div class="credits credits-center">г. Ставрополь, ул. Доваторцев 183в</div>
+    <div class="credits credits-right">
+    <a href="<?php echo ZEROGRAVITY_AUTHOR_URI; ?>/wordpress-themes/zerogravity">ZeroGravity</a> <?php _e('by', 'zerogravity'); ?> GalussoThemes.com<br />
+    <?php _e('Powered by', 'zerogravity'); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'zerogravity' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'zerogravity' ); ?>"> WordPress</a>
+    </div> -->
+  </div><!-- .site-info -->
+</footer><!-- #colophon -->
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
@@ -54,14 +64,8 @@
 
   ga('create', 'UA-67468591-1', 'auto');
   ga('send', 'pageview');
-  </script>
-
-
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
-<?php
-	if (get_theme_mod('zerogravity_boton_ir_arriba', 1) == 1){ ?>
+</script>
+<?php if (get_theme_mod('zerogravity_boton_ir_arriba', 1) == 1){ ?>
 		<a href='#inicio_pagina' title='<?php echo __('Back to top', 'zerogravity'); ?>'><div class="ir-arriba"><i class="fa fa-chevron-up"></i></div></a>
 	<?php } 
 	
@@ -79,12 +83,10 @@ var google_remarketing_only = false;
 </script>
 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 </script>
-<noscript>
-<div style="display:inline;">
+<noscript><div style="display:inline;">
 <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/944187921/?label=aUMVCPqOxGcQkdScwgM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-
+</div></noscript>
+<!--[contact-form-7 id="4308" title="обратный звонок"]-->
 
 </body>
 </html>

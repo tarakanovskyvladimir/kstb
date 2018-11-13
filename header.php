@@ -29,9 +29,44 @@
 </head>
 
 <body <?php body_class(); ?>>
-
 <a name='inicio_pagina'></a>
+<header id="masthead" class="site-header" role="banner">
+	<div style="position:relative"><?php get_template_part('menu-movil'); ?></div>
+<?php if ( get_header_image() ) { 
+		if (get_theme_mod('zerogravity_logo_active') == 1) { 
+			$div_image_header = '<section class="logo-header-wrapper flex-container">';
+			if (get_theme_mod('zerogravity_logo_center') == 1) $div_image_header = '<div class="logo-header-wrapper" style="text-align:center;">'; }
+		else{ $div_image_header = '<section class="image-header-wrapper flex-container">'; } 
+		echo $div_image_header; ?>
+		<!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a> -->
+		<div class="logo-top"><img src="/wp-content/themes/zerogravity/img/logo-top.jpg" alt="База СТБ"></div>
+		<div class="head-tel"><a href="tel:+79624410220">8 962 441 02 20</a>
+		<a href="tel:+78652467878">8 (8652) 46 78 78</a>
+		<span>8 962 441 02 20<br>8 (8652) 46 78 78</span></div>
+		<address>г. Ставрополь, ул Доваторцев, 183В</address>
+		</section><!-- .logo-header-wrapper or .image-header-wrapper -->
+<?php }else{ ?>
+	<div class="blog-info-sin-imagen"><hgroup>
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	</hgroup></div>
+<?php } //if ( get_header_image() ) ?>
+		
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'zerogravity' ); ?>"><?php _e( 'Skip to content', 'zerogravity' ); ?></a>
+		<section class="fp-container flex-container"><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+	
+		<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<label for="s" class="assistive-text"><?php _e( 'Search', 'zerogravity' ); ?></label>
+			<input type="text" class="txt-search-n" name="s" id="s" />
+			<input type="submit" name="submit" id="btn-search-n" value="<?php _e( 'Поиск', 'zerogravity' ); ?>" />
+		</form><div id="but_mob_menu">Меню <div class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></div></div>
+		</section>
 
+	</nav><!-- #site-navigation -->
+
+
+	</header><!-- #masthead -->
 <div id="page" class="hfeed site">
 	<div class="top-bar">
 		<?php $palabra_menu = (get_theme_mod('zerogravity_mostrar_menu_junto_icono', '') == 1) ? ' ' . __( 'MENU', 'zerogravity') : ''; ?>
@@ -78,45 +113,7 @@
 	
 	<div class="wrapper-search-top-bar"><div class="search-top-bar"><?php get_template_part('searchform-toggle'); ?></div></div>
 	
-	<header id="masthead" class="site-header" role="banner">
-	<div style="position:relative"><?php get_template_part('menu-movil'); ?></div>
-		<?php if ( get_header_image() ) { 
-				if (get_theme_mod('zerogravity_logo_active') == 1) { 
-					$div_image_header = '<div class="logo-header-wrapper">';
-					if (get_theme_mod('zerogravity_logo_center') == 1) $div_image_header = '<div class="logo-header-wrapper" style="text-align:center;">';
-				}else{
-					$div_image_header = '<div class="image-header-wrapper">';
-				} ?>
-				
-				<?php echo $div_image_header; ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
-				</div><!-- .logo-header-wrapper or .image-header-wrapper -->
-<div class="head-tel">41-02-20</br>46-78-78</div>
-				
-		<?php }else{ ?>
-			<div class="blog-info-sin-imagen">
-			<hgroup>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</hgroup>
-			</div>
-		<?php } //if ( get_header_image() ) ?>
-		
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'zerogravity' ); ?>"><?php _e( 'Skip to content', 'zerogravity' ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			
-		</nav><!-- #site-navigation -->
-<div class="wrapper-search-form">
-		<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<label for="s" class="assistive-text"><?php _e( 'Search', 'zerogravity' ); ?></label>
-			<input type="text" class="txt-search-n" name="s" id="s" />
-			<input type="submit" name="submit" id="btn-search-n" value="<?php _e( 'Поиск', 'zerogravity' ); ?>" />
-		</form>
-    </div>
-
-
-	</header><!-- #masthead -->
-<?php if ( function_exists('yoast_breadcrumb') ) 
+	
+<?php if (function_exists('yoast_breadcrumb') && $_SERVER["REQUEST_URI"] != "/") 
 {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
 	<div id="main" class="wrapper">

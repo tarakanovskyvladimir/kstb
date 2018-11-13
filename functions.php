@@ -156,7 +156,7 @@ function zerogravity_scripts_styles() {
 	wp_enqueue_style('font-awesome', get_template_directory_uri() .'/css/font-awesome-4.3.0/css/font-awesome.min.css');
 	
 	// Toggle search
-	wp_enqueue_script('buscar', get_template_directory_uri() .'/js/zg-toggle-search.js', array('jquery'), false, time());
+	wp_enqueue_script('buscar', get_template_directory_uri() .'/js/zg-toggle-search.js', array('jquery'), time(), false);
 }
 
 
